@@ -1,8 +1,10 @@
 module Main where
 
-import qualified MyLib (someFunc)
+import qualified MyLib (someFunc, showElement)
+import Text.Read (Lexeme(String))
 
 main :: IO ()
 main = do
   putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+  contents <- MyLib.someFunc
+  MyLib.showElement contents
